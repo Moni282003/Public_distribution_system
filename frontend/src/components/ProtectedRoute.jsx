@@ -4,9 +4,7 @@ const ProtectedRoute = ({ children }) => {
   const centerId = localStorage.getItem('center_id');
   const role = localStorage.getItem('role');
 
-  // Check if the user is authenticated
   if (!centerId || !role ) {
-    // Redirect to the login page if not authenticated
     return <Navigate to="/" replace />;
   }
 
@@ -27,7 +25,6 @@ const ProtectedRouteAdmin = ({ children }) => {
     const admin = localStorage.getItem('aadhar');
   
     if (!admin) {
-      // Redirect to the login page if not authenticated
       return <Navigate to="/" replace />;
     }
   
