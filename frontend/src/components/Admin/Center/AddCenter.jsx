@@ -13,16 +13,16 @@ const AddCenter = () => {
   useEffect(() => {
     const fetchRationIds = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/get_ration_ids"); // Use Axios to fetch data
+        const response = await axios.get("http://localhost:5000/get_ration_ids"); 
         if (response.data && Array.isArray(response.data.ration_ids)) {
-          setRationIds(response.data.ration_ids); // Set the state only if it's an array
+          setRationIds(response.data.ration_ids);
         } else {
           console.error("Unexpected response format:", response.data);
-          setRationIds([]); // Reset to empty array if response is not as expected
+          setRationIds([]); 
         }
       } catch (error) {
         console.error("Failed to fetch ration IDs:", error);
-        setRationIds([]); // Handle error as needed
+        setRationIds([]); 
       }
     };
 
