@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Import Axios
 
 const AddCenter = () => {
-  const [rationIds, setRationIds] = useState([]); // Initialize as an empty array
+  const [rationIds, setRationIds] = useState([]); 
   const [selectedRationId, setSelectedRationId] = useState('');
-  const [centerId, setCenterId] = useState(''); // New state for Center ID
+  const [centerId, setCenterId] = useState('');
   const [locationPin, setLocationPin] = useState('');
   const [centerName, setCenterName] = useState('');
   const [address, setAddress] = useState('');
@@ -38,7 +38,7 @@ const AddCenter = () => {
       },
       body: JSON.stringify({
         ration_id: selectedRationId,
-        center_id: centerId, // Include Center ID in the request body
+        center_id: centerId,
         location_pin: locationPin,
         center_name: centerName,
         address,
