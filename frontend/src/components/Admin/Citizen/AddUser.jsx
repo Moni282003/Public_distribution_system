@@ -23,7 +23,6 @@ const AddUser = () => {
       [name]: value,
     }));
 
-    // Fetch ration shop and center based on location pin
     if (name === 'location_pin' && value.length === 6) {
       axios.get(`http://localhost:5000/get_ration_shop_by_pin/${value}`)
         .then((response) => {
@@ -35,7 +34,6 @@ const AddUser = () => {
             diagnostic_center: '',
           }));
 
-          // Fetch diagnostic center based on ration shop id
           return axios.get(`http://localhost:5000/get_center_by_ration_shop/${shopId}`);
         })
         .then((response) => {
@@ -90,7 +88,6 @@ const AddUser = () => {
         <h2 className="text-3xl font-semibold mb-4 text-center">Add Citizen</h2>
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
           
-          {/* Citizen ID */}
           <div className="mb-4">
             <label htmlFor="citizenId" className="block mb-2">
               Citizen ID:<span className="text-red-500">*</span>
@@ -106,7 +103,6 @@ const AddUser = () => {
             />
           </div>
 
-          {/* Ration Card ID */}
           <div className="mb-4">
             <label htmlFor="rationCardId" className="block mb-2">
               Ration Card ID:<span className="text-red-500">*</span>
@@ -140,7 +136,6 @@ const AddUser = () => {
             />
           </div>
 
-          {/* Ration Shop ID (displayed) */}
           <div className="mb-4">
             <label htmlFor="rationShopId" className="block mb-2">Ration Shop ID:</label>
             <input
@@ -153,7 +148,6 @@ const AddUser = () => {
             />
           </div>
 
-          {/* Diagnostic Center (displayed) */}
           <div className="mb-4">
             <label htmlFor="diagnosticCenter" className="block mb-2">Diagnostic Center:</label>
             <input
@@ -166,7 +160,6 @@ const AddUser = () => {
             />
           </div>
 
-          {/* Name */}
           <div className="mb-4">
             <label htmlFor="name" className="block mb-2">
               Name:<span className="text-red-500">*</span>
@@ -182,7 +175,6 @@ const AddUser = () => {
             />
           </div>
 
-          {/* Sex */}
           <div className="mb-4">
             <label htmlFor="sex" className="block mb-2">
               Sex:<span className="text-red-500">*</span>
@@ -202,7 +194,6 @@ const AddUser = () => {
             </select>
           </div>
 
-          {/* Date of Birth */}
           <div className="mb-4">
             <label htmlFor="dob" className="block mb-2">
               Date of Birth:<span className="text-red-500">*</span>
@@ -218,7 +209,6 @@ const AddUser = () => {
             />
           </div>
 
-          {/* Contact Number */}
           <div className="mb-4">
             <label htmlFor="contactNumber" className="block mb-2">
               Contact Number:<span className="text-red-500">*</span>
@@ -234,7 +224,6 @@ const AddUser = () => {
             />
           </div>
 
-          {/* Address */}
           <div className="col-span-2 mb-4">
             <label htmlFor="address" className="block mb-2">
               Address:<span className="text-red-500">*</span>
@@ -250,7 +239,6 @@ const AddUser = () => {
             />
           </div>
 
-          {/* Income Level (spanning both columns) */}
           <div className="col-span-2 mb-4">
             <label htmlFor="incomeLevel" className="block mb-2">
               Income Level:<span className="text-red-500">*</span>
@@ -268,7 +256,6 @@ const AddUser = () => {
             </select>
           </div>
 
-          {/* Submit Button (spanning both columns) */}
           <div className="col-span-2">
             <button
               type="submit"
