@@ -81,7 +81,7 @@ const ManageCenters = () => {
     try {
       const response = await axios.get(`http://localhost:5000/get_diag/${centerId}`);
       if (Array.isArray(response.data.users)) {
-        setUsers(response.data.users); // Make sure to access 'users' here
+        setUsers(response.data.users); 
       } else {
         console.error('Unexpected response format for users:', response.data);
       }
