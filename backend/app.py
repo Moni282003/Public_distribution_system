@@ -8,9 +8,9 @@ app = Flask(__name__)
 CORS(app)
 CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
 
-DB_HOST = 'localhost'  # Replace with your database host
-DB_USER = 'postgres'   # Replace with your database username
-DB_PASS = '123456'     # Replace with your database password
+DB_HOST = 'localhost' 
+DB_USER = 'postgres'   
+DB_PASS = '123456'    
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
